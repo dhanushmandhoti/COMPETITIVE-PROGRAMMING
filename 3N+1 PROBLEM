@@ -1,0 +1,18 @@
+i,j=map(int,input().split())
+start=min(i,j)
+end=max(i,j)
+max_count=0
+for cur_n in range(start,end+1):
+    n=cur_n
+    count=1
+    while n>1:
+        if n % 2==0:
+            n=n//2
+        else:
+            n=3*n+1
+        count=count+1
+    if count>max_count:
+        max_count=count
+
+print(i,j,max_count)
+
