@@ -1,0 +1,16 @@
+from itertools import combinations
+
+n = int(input())
+a = list(map(int, input().split()))
+
+total = sum(a)
+k = n // 2
+
+ans = total
+
+for group in combinations(a, k):
+    s = sum(group)
+    diff = abs(total - 2 * s)
+    ans = min(ans, diff)
+
+print(ans)
